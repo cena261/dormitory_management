@@ -1,0 +1,35 @@
+/* Additional styles for invoice manager */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge-paid {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: rgb(16, 185, 129);
+}
+
+.status-badge-pending {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: rgb(245, 158, 11);
+}
+
+.status-badge-overdue {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: rgb(239, 68, 68);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .invoice-table {
+    font-size: 0.75rem;
+  }
+
+  .invoice-actions {
+    flex-direction: column;
+  }
+}

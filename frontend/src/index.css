@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7494ec;
+  --color-background: #f9fafb;
+  --color-primaryBlur: #f2f5fe;
+  --color-secondary: #6b7280;
+  --color-lightgrey: #dbdbdb;
+}
+@layer base {
+  h5 {
+    @apply text-secondary;
+  }
+
+  body:not(.login-page) {
+    font-family: "Inter", "Roboto", sans-serif;
+  }
+}

@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: ktx-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: KTX_Managerment
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - ktx-network
+
+  backend:
+    build:
+      context: ./Dorm_Admin_backend/Dorm_Admin
+    container_name: ktx-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/KTX_Managerment
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - ktx-network
+
+  frontend:
+    build: ./frontend
+    container_name: ktx-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - ktx-network
+
+volumes:
+  mysql-data:
+
+networks:
+  ktx-network:
+    driver: bridge
