@@ -63,7 +63,7 @@ function ContractManager() {
           return;
         }
 
-        const response = await fetch("http://localhost:8080/api/contracts", {
+        const response = await fetch("https://dormitory-management-backend.onrender.com/api/contracts", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -113,7 +113,7 @@ function ContractManager() {
       const userData = JSON.parse(localStorage.getItem("user"));
       const token = userData?.access_token;
 
-      const response = await fetch("http://localhost:8080/api/contracts", {
+      const response = await fetch("https://dormitory-management-backend.onrender.com/api/contracts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -129,7 +129,7 @@ function ContractManager() {
       const data = await response.json();
       if (data.code === 0) {
         const updatedResponse = await fetch(
-          "http://localhost:8080/api/contracts",
+          "https://dormitory-management-backend.onrender.com/api/contracts",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -165,7 +165,7 @@ function ContractManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/contracts/${updatedContract.maHopDong}`,
+        `https://dormitory-management-backend.onrender.com/api/contracts/${updatedContract.maHopDong}`,
         {
           method: "PUT",
           headers: {
@@ -183,7 +183,7 @@ function ContractManager() {
       const data = await response.json();
       if (data.code === 0) {
         const updatedResponse = await fetch(
-          "http://localhost:8080/api/contracts",
+          "https://dormitory-management-backend.onrender.com/api/contracts",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -219,7 +219,7 @@ function ContractManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/contracts/${contract.maHopDong}/end`,
+        `https://dormitory-management-backend.onrender.com/api/contracts/${contract.maHopDong}/end`,
         {
           method: "PUT",
           headers: {
@@ -240,7 +240,7 @@ function ContractManager() {
       const data = await response.json();
       if (data.code === 0) {
         const updatedResponse = await fetch(
-          "http://localhost:8080/api/contracts",
+          "https://dormitory-management-backend.onrender.com/api/contracts",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -283,7 +283,7 @@ function ContractManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/contracts/${deletingContract.maHopDong}`,
+        `https://dormitory-management-backend.onrender.com/api/contracts/${deletingContract.maHopDong}`,
         {
           method: "DELETE",
           headers: {
@@ -297,7 +297,7 @@ function ContractManager() {
       }
 
       const updatedResponse = await fetch(
-        "http://localhost:8080/api/contracts",
+        "https://dormitory-management-backend.onrender.com/api/contracts",
         {
           headers: {
             Authorization: `Bearer ${token}`,

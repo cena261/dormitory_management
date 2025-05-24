@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api";
+const API_URL = "https://dormitory-management-backend.onrender.com/api";
 
 const getAuthHeader = () => {
   const user = JSON.parse(localStorage.getItem("user"));

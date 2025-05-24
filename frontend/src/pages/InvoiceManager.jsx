@@ -78,7 +78,7 @@ function InvoiceManager() {
         const username = userData?.username;
         if (!token || !username) return;
         const response = await fetch(
-          "http://localhost:8080/api/admin-accounts",
+          "https://dormitory-management-backend.onrender.com/api/admin-accounts",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -134,7 +134,7 @@ function InvoiceManager() {
       }
 
       const response = await fetch(
-        `http://localhost:8080/api/invoices?${queryParams.toString()}`,
+        `https://dormitory-management-backend.onrender.com/api/invoices?${queryParams.toString()}`,
         {
           method: "GET",
           headers: {
@@ -236,7 +236,7 @@ function InvoiceManager() {
         }
 
         const response = await fetch(
-          `http://localhost:8080/api/contracts/${invoice.maHopDong}`,
+          `https://dormitory-management-backend.onrender.com/api/contracts/${invoice.maHopDong}`,
           {
             method: "GET",
             headers: {
@@ -289,7 +289,7 @@ function InvoiceManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/invoices/${id}/status`,
+        `https://dormitory-management-backend.onrender.com/api/invoices/${id}/status`,
         {
           method: "PUT",
           headers: {
@@ -397,7 +397,7 @@ function InvoiceManager() {
       const userData = JSON.parse(localStorage.getItem("user"));
       const token = userData?.access_token;
 
-      const response = await fetch("http://localhost:8080/api/contracts", {
+      const response = await fetch("https://dormitory-management-backend.onrender.com/api/contracts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -486,7 +486,7 @@ function InvoiceManager() {
         JSON.stringify(invoiceData, null, 2)
       );
 
-      const response = await fetch("http://localhost:8080/api/invoices", {
+      const response = await fetch("https://dormitory-management-backend.onrender.com/api/invoices", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -908,7 +908,7 @@ function InvoiceManager() {
                                   .toISOString()
                                   .split("T")[0];
                                 const res = await fetch(
-                                  `http://localhost:8080/api/invoices/${invoice.maHoaDon}/status`,
+                                  `https://dormitory-management-backend.onrender.com/api/invoices/${invoice.maHoaDon}/status`,
                                   {
                                     method: "PUT",
                                     headers: {
@@ -975,7 +975,7 @@ function InvoiceManager() {
                                 const token = userData?.access_token;
                                 const trangThai = "ChuaThanhToan";
                                 const res = await fetch(
-                                  `http://localhost:8080/api/invoices/${invoice.maHoaDon}/status`,
+                                  `https://dormitory-management-backend.onrender.com/api/invoices/${invoice.maHoaDon}/status`,
                                   {
                                     method: "PUT",
                                     headers: {
@@ -1038,7 +1038,7 @@ function InvoiceManager() {
                                 const token = userData?.access_token;
                                 const trangThai = "QuaHan";
                                 const res = await fetch(
-                                  `http://localhost:8080/api/invoices/${invoice.maHoaDon}/status`,
+                                  `https://dormitory-management-backend.onrender.com/api/invoices/${invoice.maHoaDon}/status`,
                                   {
                                     method: "PUT",
                                     headers: {

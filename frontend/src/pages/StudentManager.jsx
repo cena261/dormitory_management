@@ -131,7 +131,7 @@ function StudentManager() {
         }
 
         const response = await fetch(
-          "http://localhost:8080/api/student-accounts",
+          "https://dormitory-management-backend.onrender.com/api/student-accounts",
           {
             method: "GET",
             headers: {
@@ -262,7 +262,7 @@ function StudentManager() {
       };
 
       const response = await fetch(
-        "http://localhost:8080/api/student-accounts",
+        "https://dormitory-management-backend.onrender.com/api/student-accounts",
         {
           method: "POST",
           headers: {
@@ -278,7 +278,7 @@ function StudentManager() {
       }
 
       const updatedResponse = await fetch(
-        "http://localhost:8080/api/student-accounts",
+        "https://dormitory-management-backend.onrender.com/api/student-accounts",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -393,7 +393,7 @@ function StudentManager() {
       };
 
       const response = await fetch(
-        `http://localhost:8080/api/student-accounts/${editingStudent.maSV}`,
+        `https://dormitory-management-backend.onrender.com/api/student-accounts/${editingStudent.maSV}`,
         {
           method: "PUT",
           headers: {
@@ -409,7 +409,7 @@ function StudentManager() {
       }
 
       const updatedResponse = await fetch(
-        "http://localhost:8080/api/student-accounts",
+        "https://dormitory-management-backend.onrender.com/api/student-accounts",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -469,7 +469,7 @@ function StudentManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/student-accounts/${deletingStudent.maSV}`,
+        `https://dormitory-management-backend.onrender.com/api/student-accounts/${deletingStudent.maSV}`,
         {
           method: "DELETE",
           headers: {
@@ -483,7 +483,7 @@ function StudentManager() {
       }
 
       const updatedResponse = await fetch(
-        "http://localhost:8080/api/student-accounts",
+        "https://dormitory-management-backend.onrender.com/api/student-accounts",
         {
           headers: {
             Authorization: `Bearer ${token}`,

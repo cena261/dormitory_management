@@ -122,13 +122,16 @@ function RoomManager() {
         throw new Error("No token found");
       }
 
-      const response = await fetch("http://localhost:8080/api/rooms", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        "https://dormitory-management-backend.onrender.com/api/rooms",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (response.status === 401) {
         logout();
@@ -160,7 +163,7 @@ function RoomManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/rooms/${maPhong}/students`,
+        `https://dormitory-management-backend.onrender.com/api/rooms/${maPhong}/students`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -193,7 +196,7 @@ function RoomManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        "http://localhost:8080/api/student-accounts",
+        "https://dormitory-management-backend.onrender.com/api/student-accounts",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -319,8 +322,8 @@ function RoomManager() {
 
       const method = roomForm.id ? "PUT" : "POST";
       const url = roomForm.id
-        ? `http://localhost:8080/api/rooms/${roomForm.maPhong}`
-        : "http://localhost:8080/api/rooms";
+        ? `https://dormitory-management-backend.onrender.com/api/rooms/${roomForm.maPhong}`
+        : "https://dormitory-management-backend.onrender.com/api/rooms";
 
       const roomData = {
         maPhong: roomForm.maPhong,
@@ -405,7 +408,7 @@ function RoomManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/rooms/${deletingRoom.maPhong}`,
+        `https://dormitory-management-backend.onrender.com/api/rooms/${deletingRoom.maPhong}`,
         {
           method: "DELETE",
           headers: {
@@ -476,7 +479,7 @@ function RoomManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/rooms/${maPhong}/status?trangThai=${newStatus}`,
+        `https://dormitory-management-backend.onrender.com/api/rooms/${maPhong}/status?trangThai=${newStatus}`,
         {
           method: "PUT",
           headers: {
@@ -537,7 +540,7 @@ function RoomManager() {
       }
 
       const response = await fetch(
-        `http://localhost:8080/api/rooms/${currentRoom.maPhong}/add-student/${student.maSV}`,
+        `https://dormitory-management-backend.onrender.com/api/rooms/${currentRoom.maPhong}/add-student/${student.maSV}`,
         {
           method: "PUT",
           headers: {
@@ -581,7 +584,7 @@ function RoomManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/rooms/${currentRoom.maPhong}/remove-student/${student.maSV}`,
+        `https://dormitory-management-backend.onrender.com/api/rooms/${currentRoom.maPhong}/remove-student/${student.maSV}`,
         {
           method: "PUT",
           headers: {

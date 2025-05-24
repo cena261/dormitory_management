@@ -50,7 +50,7 @@ function DashboardContent() {
         }
 
         const studentsResponse = await fetch(
-          "http://localhost:8080/api/student-accounts",
+          "https://dormitory-management-backend.onrender.com/api/student-accounts",
           {
             method: "GET",
             headers: {
@@ -68,7 +68,7 @@ function DashboardContent() {
           }
         }
 
-        const roomsResponse = await fetch("http://localhost:8080/api/rooms", {
+        const roomsResponse = await fetch("https://dormitory-management-backend.onrender.com/api/rooms", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -87,7 +87,7 @@ function DashboardContent() {
 
         const fetchRepairRequests = async (status) => {
           const response = await fetch(
-            `http://localhost:8080/api/repair-requests/paged?page=0&size=20&trangThai=${status}`,
+            `https://dormitory-management-backend.onrender.com/api/repair-requests/paged?page=0&size=20&trangThai=${status}`,
             {
               method: "GET",
               headers: {
@@ -115,7 +115,7 @@ function DashboardContent() {
 
         const fetchPayments = async () => {
           const response = await fetch(
-            `http://localhost:8080/api/invoices?page=0&size=20&trangThai=ChuaThanhToan`,
+            `https://dormitory-management-backend.onrender.com/api/invoices?page=0&size=20&trangThai=ChuaThanhToan`,
             {
               method: "GET",
               headers: {
@@ -150,7 +150,7 @@ function DashboardContent() {
         setIsLoadingContracts(true);
         try {
           const contractsResponse = await fetch(
-            "http://localhost:8080/api/contracts",
+            "https://dormitory-management-backend.onrender.com/api/contracts",
             {
               method: "GET",
               headers: {

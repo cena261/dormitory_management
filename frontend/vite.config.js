@@ -11,9 +11,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8080",
+        target: "https://dormitory-management-backend.onrender.com",
         changeOrigin: true,
-        ws: true, // Quan trọng cho WebSocket
+        ws: true,
       },
     },
   },

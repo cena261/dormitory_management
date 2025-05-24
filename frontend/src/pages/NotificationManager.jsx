@@ -71,7 +71,7 @@ function NotificationManager() {
       const userData = JSON.parse(localStorage.getItem("user"));
       const token = userData?.access_token;
       const response = await fetch(
-        "http://localhost:8080/api/student-accounts",
+        "https://dormitory-management-backend.onrender.com/api/student-accounts",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -156,7 +156,7 @@ function NotificationManager() {
         const userData = JSON.parse(localStorage.getItem("user"));
         const token = userData?.access_token;
         const response = await fetch(
-          "http://localhost:8080/api/admin-accounts",
+          "https://dormitory-management-backend.onrender.com/api/admin-accounts",
           {
             headers: {
               Authorization: `Bearer ${token}`,

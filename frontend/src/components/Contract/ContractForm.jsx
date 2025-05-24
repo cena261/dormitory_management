@@ -44,7 +44,7 @@ const ContractForm = ({ contract, onSubmit, onCancel }) => {
           return;
         }
 
-        const response = await fetch("http://localhost:8080/api/rooms", {
+        const response = await fetch("https://dormitory-management-backend.onrender.com/api/rooms", {
           headers: {
             Authorization: `Bearer ${access_token}`,
           },

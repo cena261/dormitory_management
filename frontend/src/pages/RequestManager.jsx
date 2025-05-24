@@ -42,7 +42,7 @@ function RequestManager() {
         const token = userData?.access_token;
 
         const response = await fetch(
-          `http://localhost:8080/api/repair-requests/paged?page=${currentPage}&size=20`,
+          `https://dormitory-management-backend.onrender.com/api/repair-requests/paged?page=${currentPage}&size=20`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -109,7 +109,7 @@ function RequestManager() {
       const token = userData?.access_token;
 
       const response = await fetch(
-        `http://localhost:8080/api/repair-requests/${maYeuCau}`,
+        `https://dormitory-management-backend.onrender.com/api/repair-requests/${maYeuCau}`,
         {
           method: "PUT",
           headers: {
@@ -135,7 +135,7 @@ function RequestManager() {
       }
 
       const updatedResponse = await fetch(
-        `http://localhost:8080/api/repair-requests/paged?page=${currentPage}&size=20`,
+        `https://dormitory-management-backend.onrender.com/api/repair-requests/paged?page=${currentPage}&size=20`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -170,7 +170,7 @@ function RequestManager() {
       const token = userData?.access_token;
 
       const adminResponse = await fetch(
-        "http://localhost:8080/api/admin-accounts",
+        "https://dormitory-management-backend.onrender.com/api/admin-accounts",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -207,7 +207,7 @@ function RequestManager() {
       };
 
       const notificationResponse = await fetch(
-        "http://localhost:8080/api/notifications",
+        "https://dormitory-management-backend.onrender.com/api/notifications",
         {
           method: "POST",
           headers: {
@@ -226,7 +226,7 @@ function RequestManager() {
       }
 
       const deleteResponse = await fetch(
-        `http://localhost:8080/api/repair-requests/${selectedRequest.maYeuCau}`,
+        `https://dormitory-management-backend.onrender.com/api/repair-requests/${selectedRequest.maYeuCau}`,
         {
           method: "DELETE",
           headers: {
@@ -240,7 +240,7 @@ function RequestManager() {
       }
 
       const updatedResponse = await fetch(
-        `http://localhost:8080/api/repair-requests/paged?page=${currentPage}&size=20`,
+        `https://dormitory-management-backend.onrender.com/api/repair-requests/paged?page=${currentPage}&size=20`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
